@@ -19,6 +19,9 @@ final class ExerciseSceneInteractor: ExerciseSceneInteractorProtocol {
 
   func skipExercise() {
     currentExerciseCounter += 1
+    if currentExerciseCounter >= exercises.count {
+      delegate?.handleOutput(.finished(exercises))
+    }
   }
 
   func currentExercise() -> Exercise? {

@@ -33,6 +33,11 @@ final class ExerciseSceneViewController: UIViewController {
     navigationController?.setNavigationBarHidden(true, animated: true)
   }
 
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    presenter.onViewWillDisappear()
+  }
+
   func showTitle() {
     UIView.animate(withDuration: titleAnimationDuration) {
       self.titleLabel.alpha = 1.0
@@ -65,7 +70,7 @@ extension ExerciseSceneViewController {
 
     NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)
       .sink { [weak self] _ in
-        self?.presenter.skipExercise()
+        self?.presenter.nextExercise()
       }
       .store(in: &cancelBag)
   }
@@ -126,6 +131,9 @@ extension ExerciseSceneViewController: ExerciseSceneViewProtocol {
       playerViewController.player?.play()
     case .videoTitle(let title):
       titleLabel.text = title
+    case .invalidatePlayer:
+      playerViewController.player?.pause()
+      playerViewController.player = nil
     }
   }
 }

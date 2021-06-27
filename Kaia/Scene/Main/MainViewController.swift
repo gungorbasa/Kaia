@@ -38,9 +38,8 @@ private extension MainViewController {
     stackView.addArrangedSubview(tableView)
     stackView.addArrangedSubview(startButton)
 
-    // For some reason snp doesnt work correctly with safe area at this place
     stackView.snp.makeConstraints {
-      $0.edges.equalTo(view.safeAreaInsets)
+      $0.edges.equalTo(view.safeAreaLayoutGuide)
     }
   }
 
@@ -55,7 +54,7 @@ private extension MainViewController {
     startButton.setTitleColor(.white, for: .normal)
     startButton.addTarget(self, action: #selector(didButtonClick), for: .touchUpInside)
     startButton.snp.makeConstraints {
-      $0.height.equalTo(66)
+      $0.height.equalTo(44)
     }
   }
 

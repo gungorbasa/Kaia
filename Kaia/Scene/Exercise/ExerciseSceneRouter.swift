@@ -9,17 +9,22 @@
 import UIKit
 
 final class ExerciseSceneRouter: ExerciseSceneRouterProtocol {
-
-    unowned let view: UIViewController
-
-    init(_ view: UIViewController) {
-        self.view = view
+  
+  weak var view: UIViewController?
+  
+  init(_ view: UIViewController) {
+    self.view = view
+  }
+  
+  func navigate(to route: ExerciseSceneRoute) {
+    switch route {
+    case .dismiss:
+      view?.navigationController?.popViewController(animated: true)
+    case .summary(let exercises, let skipList):
+      view?.navigationController?.pushViewController(
+        SummaryBuilder.make(exercises: exercises, skippedList: skipList),
+        animated: true
+      )
     }
-
-    func navigate(to route: ExerciseSceneRoute) {
-      switch route {
-      case .dismiss:
-        view.dismiss(animated: true, completion: nil)
-      }
-    }
+  }
 }

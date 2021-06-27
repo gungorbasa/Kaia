@@ -3,4 +3,70 @@
    uuid = "73BA12A1-0B5C-479A-9E81-6A59F7EC8A7B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFC0CA82-F7DF-4BBE-9F44-A362EB618AB9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kaia/Scene/Summary/SummaryInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(exercises:skippedList:storage:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EFC0CA82-F7DF-4BBE-9F44-A362EB618AB9 - c27d05085ec76e03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kaia.SummaryInteractor.init(exercises: Swift.Array&lt;Kaia.Exercise&gt;, skippedList: Swift.Array&lt;Swift.Int&gt;, storage: Kaia.LocalStorageProtocol) -&gt; Kaia.SummaryInteractor"
+                  moduleName = "Kaia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gungorbasa/Documents/Kaia/Kaia/Scene/Summary/SummaryInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "EFC0CA82-F7DF-4BBE-9F44-A362EB618AB9 - a8fa93dd998a1091"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Kaia.Exercise) -&gt; Swift.Bool in Kaia.SummaryInteractor.init(exercises: Swift.Array&lt;Kaia.Exercise&gt;, skippedList: Swift.Array&lt;Swift.Int&gt;, storage: Kaia.LocalStorageProtocol) -&gt; Kaia.SummaryInteractor"
+                  moduleName = "Kaia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gungorbasa/Documents/Kaia/Kaia/Scene/Summary/SummaryInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "059567BD-D392-43EE-AA9E-72DCD509DCA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kaia/Scene/Summary/SummaryPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "titleForHeader(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

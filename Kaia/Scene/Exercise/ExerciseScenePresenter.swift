@@ -37,7 +37,17 @@ final class ExerciseScenePresenter: ExerciseScenePresenterProtocol {
     view?.handleOutput(.videoTitle(interactor.currentExercise()?.name ?? ""))
   }
 
+  func onViewWillDisappear() {
+    view?.handleOutput(.invalidatePlayer)
+  }
+
   func skipExercise() {
+    guard let exercise = interactor.currentExercise() else { return }
+    skippedExerciseIds.append(exercise.id)
+    nextExercise()
+  }
+
+  func nextExercise() {
     interactor.skipExercise()
     guard let url = URL(string: interactor.currentExercise()?.videoURL ?? "") else { return }
     view?.handleOutput(.url(url))
@@ -60,6 +70,9 @@ final class ExerciseScenePresenter: ExerciseScenePresenterProtocol {
 
 extension ExerciseScenePresenter: ExerciseSceneInteractorDelegate {
   func handleOutput(_ output: ExerciseSceneInteractorOutput) {
-
+    switch output {
+    case .finished(let exercises):
+      router.navigate(to: .summary(exercises: exercises, skipList: skippedExerciseIds))
+    }
   }
 }

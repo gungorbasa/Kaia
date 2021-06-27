@@ -17,7 +17,7 @@ protocol ExerciseSceneInteractorProtocol: AnyObject {
 }
 
 enum ExerciseSceneInteractorOutput {
-
+  case finished([Exercise])
 }
 
 protocol ExerciseSceneInteractorDelegate: AnyObject {
@@ -28,13 +28,16 @@ protocol ExerciseSceneInteractorDelegate: AnyObject {
 // MARK: - Presenter
 protocol ExerciseScenePresenterProtocol: AnyObject {
   func onViewDidLoad()
+  func onViewWillDisappear()
   func skipExercise()
+  func nextExercise()
   func onTouchCloseButton()
 }
 
 enum ExerciseScenePresenterOutput: Equatable {
   case url(URL)
   case videoTitle(String)
+  case invalidatePlayer
 }
 
 // MARK: - View
@@ -47,6 +50,7 @@ protocol ExerciseSceneViewProtocol: AnyObject {
 // MARK: - Router
 enum ExerciseSceneRoute: Equatable {
   case dismiss
+  case summary(exercises: [Exercise], skipList: [Int])
 }
 
 protocol ExerciseSceneRouterProtocol: AnyObject {

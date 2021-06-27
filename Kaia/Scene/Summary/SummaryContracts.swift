@@ -27,14 +27,16 @@ protocol SummaryInteractorDelegate: AnyObject {
 
 // MARK: - Presenter
 protocol SummaryPresenterProtocol: AnyObject {
+  func onViewDidLoad()
   func numberOfSections() -> Int
   func numberOfRows(in section: Int) -> Int
   func viewModel(for indexPath: IndexPath) -> ExerciseCellViewModel?
   func titleForHeader(in section: Int) -> String
+  func onTapFinishExercise()
 }
 
 enum SummaryPresenterOutput: Equatable {
-
+  case reload
 }
 
 // MARK: - View
@@ -45,7 +47,7 @@ protocol SummaryViewProtocol: AnyObject {
 
 // MARK: - Router
 enum SummaryRoute: Equatable {
-
+  case dismiss
 }
 
 protocol SummaryRouterProtocol: AnyObject {

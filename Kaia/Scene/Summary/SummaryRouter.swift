@@ -17,6 +17,9 @@ final class SummaryRouter: SummaryRouterProtocol {
   }
   
   func navigate(to route: SummaryRoute) {
-    
+    switch route {
+    case .dismiss:
+      view.navigationController?.popToRootViewController(animated: true)
+    }
   }
 }

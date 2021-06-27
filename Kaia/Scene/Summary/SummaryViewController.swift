@@ -19,6 +19,12 @@ final class SummaryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    presenter.onViewDidLoad()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.setNavigationBarHidden(true, animated: false)
   }
 }
 
@@ -49,6 +55,13 @@ extension SummaryViewController {
     finishExercisesButton.backgroundColor = .blue
     finishExercisesButton.setTitleColor(.white, for: .normal)
     finishExercisesButton.setTitle("Finish Exercises", for: .normal)
+    finishExercisesButton.snp.makeConstraints { $0.height.equalTo(44) }
+    finishExercisesButton.addTarget(self, action: #selector(didTapFinishExerciseButton), for: .touchUpInside)
+  }
+
+  @objc
+  func didTapFinishExerciseButton() {
+    presenter.onTapFinishExercise()
   }
 }
 
@@ -59,6 +72,10 @@ extension SummaryViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     presenter.numberOfRows(in: section)
+  }
+
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    presenter.titleForHeader(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,8 +97,10 @@ extension SummaryViewController: ExerciseCellDelegate {
 }
 
 extension SummaryViewController: SummaryViewProtocol {
-  
   func handleOutput(_ output: SummaryPresenterOutput) {
-    
+    switch output {
+    case .reload:
+      tableView.reloadData()
+    }
   }
 }

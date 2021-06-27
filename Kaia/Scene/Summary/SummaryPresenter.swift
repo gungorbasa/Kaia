@@ -29,6 +29,10 @@ final class SummaryPresenter: SummaryPresenterProtocol {
     self.interactor.delegate = self
   }
 
+  func onViewDidLoad() {
+    view?.handleOutput(.reload)
+  }
+
   func numberOfSections() -> Int { 2 }
   func numberOfRows(in section: Int) -> Int {
     if section == 0 {
@@ -41,10 +45,10 @@ final class SummaryPresenter: SummaryPresenterProtocol {
   }
 
   func viewModel(for indexPath: IndexPath) -> ExerciseCellViewModel? {
-    if indexPath.section == 0, interactor.skippedExercises.count < indexPath.row {
+    if indexPath.section == 0, interactor.skippedExercises.count > indexPath.row {
       let viewModel = factory.make(with: [interactor.skippedExercises[indexPath.row]]).first
       return viewModel
-    } else if indexPath.section == 1, interactor.nonSkippedExercises.count < indexPath.row {
+    } else if indexPath.section == 1, interactor.nonSkippedExercises.count > indexPath.row {
       return factory.make(with: [interactor.nonSkippedExercises[indexPath.row]]).first
     } else {
       return nil
@@ -56,6 +60,10 @@ final class SummaryPresenter: SummaryPresenterProtocol {
     } else {
       return "Completed Exercises"
     }
+  }
+
+  func onTapFinishExercise() {
+    router.navigate(to: .dismiss)
   }
 }
 
