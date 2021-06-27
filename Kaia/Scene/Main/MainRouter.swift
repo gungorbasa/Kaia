@@ -20,7 +20,7 @@ final class MainRouter: MainRouterProtocol {
       case .alert(let title, let message):
         showAlertView(title: title, message: message)
       case .exercise(let exercises):
-        view?.navigationController?.pushViewController(ExerciseSceneBuilder.make(with: exercises), animated: true)
+        view?.present(ExerciseSceneBuilder.make(with: exercises), animated: true, completion: nil)
       }
     }
 }
