@@ -117,6 +117,7 @@
 		2312913F26883D5200CAB37B /* Kaia */ = {
 			isa = PBXGroup;
 			children = (
+				23E779552688402A0052CBA1 /* Extension */,
 				2312917326883E6F00CAB37B /* Scene */,
 				2312917026883DE400CAB37B /* Models */,
 				2312914026883D5200CAB37B /* AppDelegate.swift */,
@@ -158,7 +159,6 @@
 		2312917326883E6F00CAB37B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				23E779552688402A0052CBA1 /* Extension */,
 				23E7794626883EC40052CBA1 /* Main */,
 			);
 			path = Scene;
