@@ -24,6 +24,10 @@
 		23E77957268840350052CBA1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77956268840350052CBA1 /* UIView+Extension.swift */; };
 		23E7795A268840C20052CBA1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23E77959268840C20052CBA1 /* SnapKit */; };
 		23E7795D268840E90052CBA1 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 23E7795C268840E90052CBA1 /* Networking */; };
+		23E77960268844060052CBA1 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7795F268844060052CBA1 /* ExerciseCell.swift */; };
+		23E77963268844290052CBA1 /* ExerciseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77962268844290052CBA1 /* ExerciseCellViewModel.swift */; };
+		23E77966268846490052CBA1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 23E77965268846490052CBA1 /* Nuke */; };
+		23E77968268847230052CBA1 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77967268847230052CBA1 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,9 @@
 		23E7794C26883EE40052CBA1 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		23E7794D26883EE40052CBA1 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		23E77956268840350052CBA1 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		23E7795F268844060052CBA1 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		23E77962268844290052CBA1 /* ExerciseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModel.swift; sourceTree = "<group>"; };
+		23E77967268847230052CBA1 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E77966268846490052CBA1 /* Nuke in Frameworks */,
 				23E7795D268840E90052CBA1 /* Networking in Frameworks */,
 				23E7795A268840C20052CBA1 /* SnapKit in Frameworks */,
 			);
@@ -117,6 +125,7 @@
 		2312913F26883D5200CAB37B /* Kaia */ = {
 			isa = PBXGroup;
 			children = (
+				23E7795E268843ED0052CBA1 /* Common */,
 				23E779552688402A0052CBA1 /* Extension */,
 				2312917326883E6F00CAB37B /* Scene */,
 				2312917026883DE400CAB37B /* Models */,
@@ -185,6 +194,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		23E7795E268843ED0052CBA1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				23E77961268844110052CBA1 /* Cell */,
+				23E77967268847230052CBA1 /* Images.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		23E77961268844110052CBA1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				23E7795F268844060052CBA1 /* ExerciseCell.swift */,
+				23E77962268844290052CBA1 /* ExerciseCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +231,7 @@
 			packageProductDependencies = (
 				23E77959268840C20052CBA1 /* SnapKit */,
 				23E7795C268840E90052CBA1 /* Networking */,
+				23E77965268846490052CBA1 /* Nuke */,
 			);
 			productName = Kaia;
 			productReference = 2312913D26883D5200CAB37B /* Kaia.app */;
@@ -279,6 +307,7 @@
 			packageReferences = (
 				23E77958268840C20052CBA1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				23E7795B268840E90052CBA1 /* XCRemoteSwiftPackageReference "Networking" */,
+				23E77964268846490052CBA1 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 2312913E26883D5200CAB37B /* Products */;
 			projectDirPath = "";
@@ -327,8 +356,11 @@
 				2312914526883D5200CAB37B /* ViewController.swift in Sources */,
 				2312917226883E3600CAB37B /* Exercise.swift in Sources */,
 				23E7795426883EE40052CBA1 /* MainInteractor.swift in Sources */,
+				23E77960268844060052CBA1 /* ExerciseCell.swift in Sources */,
 				2312914126883D5200CAB37B /* AppDelegate.swift in Sources */,
+				23E77968268847230052CBA1 /* Images.swift in Sources */,
 				2312914326883D5200CAB37B /* SceneDelegate.swift in Sources */,
+				23E77963268844290052CBA1 /* ExerciseCellViewModel.swift in Sources */,
 				23E7795326883EE40052CBA1 /* MainBuilder.swift in Sources */,
 				23E7795126883EE40052CBA1 /* MainContracts.swift in Sources */,
 				23E7795026883EE40052CBA1 /* MainRouter.swift in Sources */,
@@ -675,6 +707,14 @@
 				minimumVersion = 0.2.2;
 			};
 		};
+		23E77964268846490052CBA1 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -687,6 +727,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 23E7795B268840E90052CBA1 /* XCRemoteSwiftPackageReference "Networking" */;
 			productName = Networking;
+		};
+		23E77965268846490052CBA1 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23E77964268846490052CBA1 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
