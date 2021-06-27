@@ -52,6 +52,8 @@ final class MainInteractor: MainInteractorProtocol {
     } else {
       favorites.append(id)
     }
+    let index = exercises.firstIndex(where: { $0.id == id }) ?? 0
+    delegate?.handleOutput(.update(at: index))
     storage.write(key: Storage.favorites, value: favorites)
   }
 }

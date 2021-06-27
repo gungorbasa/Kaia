@@ -64,10 +64,10 @@ final class SummaryPresenter: SummaryPresenterProtocol {
 
   func onTapLike(on indexPath: IndexPath) {
     let exercise: Exercise
-    if indexPath.section == 0, interactor.skippedExercises.count > indexPath.count {
+    if indexPath.section == 0, interactor.skippedExercises.count > indexPath.row {
       exercise = interactor.skippedExercises[indexPath.row]
       interactor.exerciseLikeAction(exercise.id, isLiked: exercise.isFavorite)
-    } else if indexPath.section == 1, interactor.nonSkippedExercises.count > indexPath.count {
+    } else if indexPath.section == 1, interactor.nonSkippedExercises.count > indexPath.row {
       exercise = interactor.nonSkippedExercises[indexPath.row]
       interactor.exerciseLikeAction(exercise.id, isLiked: exercise.isFavorite)
     }

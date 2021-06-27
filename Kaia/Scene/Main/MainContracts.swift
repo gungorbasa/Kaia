@@ -20,6 +20,7 @@ protocol MainInteractorProtocol: AnyObject {
 enum MainInteractorOutput {
   case list([Exercise])
   case error(Error)
+  case update(at: Int)
 }
 
 protocol MainInteractorDelegate: AnyObject {

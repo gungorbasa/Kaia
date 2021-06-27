@@ -72,7 +72,7 @@ private extension ExerciseCell {
 
   func setupImage() {
     image.contentMode = .scaleAspectFill
-    image.layer.masksToBounds = true
+    image.clipsToBounds = true
     image.snp.makeConstraints {
       $0.height.equalTo(80)
       $0.width.equalTo(120)

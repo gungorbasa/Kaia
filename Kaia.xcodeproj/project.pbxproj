@@ -48,6 +48,16 @@
 		23E77997268877750052CBA1 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77990268877750052CBA1 /* SummaryViewController.swift */; };
 		23E77998268877750052CBA1 /* SummaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77991268877750052CBA1 /* SummaryBuilder.swift */; };
 		23E77999268877750052CBA1 /* SummaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77992268877750052CBA1 /* SummaryInteractor.swift */; };
+		23E7799F268892AE0052CBA1 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7799E268892AE0052CBA1 /* MainInteractorTests.swift */; };
+		23E779A2268899D40052CBA1 /* ExerciseServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779A1268899D40052CBA1 /* ExerciseServiceMock.swift */; };
+		23E779A4268899F10052CBA1 /* StorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779A3268899F10052CBA1 /* StorageMock.swift */; };
+		23E779A626889A2E0052CBA1 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779A526889A2E0052CBA1 /* MainPresenterTests.swift */; };
+		23E779A826889A720052CBA1 /* MainInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779A726889A720052CBA1 /* MainInteractorMock.swift */; };
+		23E779AA2688A8680052CBA1 /* MainViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779A92688A8680052CBA1 /* MainViewMock.swift */; };
+		23E779AC2688A87E0052CBA1 /* MainRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779AB2688A87E0052CBA1 /* MainRouterMock.swift */; };
+		23E779AE2688A8960052CBA1 /* ExerciseCellViewModelFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779AD2688A8960052CBA1 /* ExerciseCellViewModelFactoryMock.swift */; };
+		23E779B02688A8CE0052CBA1 /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779AF2688A8CE0052CBA1 /* MainViewTests.swift */; };
+		23E779B22688ADB30052CBA1 /* MainPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E779B12688ADB30052CBA1 /* MainPresenterMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +122,16 @@
 		23E77990268877750052CBA1 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		23E77991268877750052CBA1 /* SummaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryBuilder.swift; sourceTree = "<group>"; };
 		23E77992268877750052CBA1 /* SummaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryInteractor.swift; sourceTree = "<group>"; };
+		23E7799E268892AE0052CBA1 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		23E779A1268899D40052CBA1 /* ExerciseServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseServiceMock.swift; sourceTree = "<group>"; };
+		23E779A3268899F10052CBA1 /* StorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMock.swift; sourceTree = "<group>"; };
+		23E779A526889A2E0052CBA1 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		23E779A726889A720052CBA1 /* MainInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorMock.swift; sourceTree = "<group>"; };
+		23E779A92688A8680052CBA1 /* MainViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewMock.swift; sourceTree = "<group>"; };
+		23E779AB2688A87E0052CBA1 /* MainRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterMock.swift; sourceTree = "<group>"; };
+		23E779AD2688A8960052CBA1 /* ExerciseCellViewModelFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModelFactoryMock.swift; sourceTree = "<group>"; };
+		23E779AF2688A8CE0052CBA1 /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
+		23E779B12688ADB30052CBA1 /* MainPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +202,7 @@
 		2312915626883D5600CAB37B /* KaiaTests */ = {
 			isa = PBXGroup;
 			children = (
+				23E7799D268892A00052CBA1 /* Main */,
 				2312915726883D5600CAB37B /* KaiaTests.swift */,
 				2312915926883D5600CAB37B /* Info.plist */,
 			);
@@ -310,6 +331,31 @@
 				23E77992268877750052CBA1 /* SummaryInteractor.swift */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		23E7799D268892A00052CBA1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				23E779A0268899C20052CBA1 /* Mocks */,
+				23E7799E268892AE0052CBA1 /* MainInteractorTests.swift */,
+				23E779A526889A2E0052CBA1 /* MainPresenterTests.swift */,
+				23E779AF2688A8CE0052CBA1 /* MainViewTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		23E779A0268899C20052CBA1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				23E779A1268899D40052CBA1 /* ExerciseServiceMock.swift */,
+				23E779A3268899F10052CBA1 /* StorageMock.swift */,
+				23E779A726889A720052CBA1 /* MainInteractorMock.swift */,
+				23E779A92688A8680052CBA1 /* MainViewMock.swift */,
+				23E779AB2688A87E0052CBA1 /* MainRouterMock.swift */,
+				23E779AD2688A8960052CBA1 /* ExerciseCellViewModelFactoryMock.swift */,
+				23E779B12688ADB30052CBA1 /* MainPresenterMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,7 +538,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E779A826889A720052CBA1 /* MainInteractorMock.swift in Sources */,
+				23E779B02688A8CE0052CBA1 /* MainViewTests.swift in Sources */,
+				23E779AE2688A8960052CBA1 /* ExerciseCellViewModelFactoryMock.swift in Sources */,
 				2312915826883D5600CAB37B /* KaiaTests.swift in Sources */,
+				23E779A2268899D40052CBA1 /* ExerciseServiceMock.swift in Sources */,
+				23E779A626889A2E0052CBA1 /* MainPresenterTests.swift in Sources */,
+				23E779AA2688A8680052CBA1 /* MainViewMock.swift in Sources */,
+				23E7799F268892AE0052CBA1 /* MainInteractorTests.swift in Sources */,
+				23E779A4268899F10052CBA1 /* StorageMock.swift in Sources */,
+				23E779B22688ADB30052CBA1 /* MainPresenterMock.swift in Sources */,
+				23E779AC2688A87E0052CBA1 /* MainRouterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

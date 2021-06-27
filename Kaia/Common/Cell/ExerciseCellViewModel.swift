@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExerciseCellViewModel: Codable {
+struct ExerciseCellViewModel: Codable, Equatable {
   let id: Int
   let imageUrl: URL?
   let title: String

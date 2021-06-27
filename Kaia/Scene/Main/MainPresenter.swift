@@ -35,20 +35,12 @@ final class MainPresenter: MainPresenterProtocol {
     guard index < exercises.count else { return nil }
     return exercises[index]
   }
-  func titleForHeader() -> String {
-    "Exercises"
-  }
+  func titleForHeader() -> String { "Exercises" }
 
   func didTapLike(on index: Int) {
     guard index < exercises.count else { return }
     let exercise = exercises[index]
     interactor.exerciseLikeAction(exercise.id, isLiked: exercise.isFavorite)
-    exercises[index] = ExerciseCellViewModel(
-      id: exercise.id,
-      imageUrl: exercise.imageUrl,
-      title: exercise.title,
-      isFavorite: exercise.isFavorite ? false : true
-    )
     view?.handleOutput(.reload)
   }
 
@@ -70,6 +62,13 @@ extension MainPresenter: MainInteractorDelegate {
       DispatchQueue.main.async {
         self.router.navigate(to: .alert("Error", "Something unexpected occurred. Please, try again!"))
       }
+    case .update(let index):
+      exercises[index] = ExerciseCellViewModel(
+        id: exercises[index].id,
+        imageUrl: exercises[index].imageUrl,
+        title: exercises[index].title,
+        isFavorite: exercises[index].isFavorite ? false : true
+      )
     }
   }
 }
