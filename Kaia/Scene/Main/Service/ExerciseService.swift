@@ -9,7 +9,7 @@ import Foundation
 import Networking
 
 protocol ExerciseServing {
-  func fetch(completion: @escaping (Result<Exercise, Error>) -> Void)
+  func fetch(completion: @escaping (Result<[ExerciseNetwork], Error>) -> Void)
 }
 
 final class ExerciseService: ExerciseServing {
@@ -19,7 +19,7 @@ final class ExerciseService: ExerciseServing {
     self.networking = networking
   }
 
-  func fetch(completion: @escaping (Result<Exercise, Error>) -> Void) {
+  func fetch(completion: @escaping (Result<[ExerciseNetwork], Error>) -> Void) {
     networking.run(ExerciseNetworkRoutes.list, completion: completion)
   }
 }

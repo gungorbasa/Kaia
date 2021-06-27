@@ -14,6 +14,10 @@ protocol LocalStorageKeysProtocol {
   var rawValue: String { get }
 }
 
+enum Storage: String, LocalStorageKeysProtocol{
+  case favorites
+}
+
 protocol LocalStorageProtocol {
   func value<T>(key: LocalStorageKeysProtocol) -> T? where T: Codable
   func write<T>(key: LocalStorageKeysProtocol, value: T?) where T: Codable

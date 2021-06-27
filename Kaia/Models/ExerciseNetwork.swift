@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct Exercise: Codable {
+struct ExerciseNetwork: Codable {
   let id: Int
   let name: String
   let coverImageURL: String
   let videoURL: String
-  let isFavorite: Bool
+
+  enum CodingKeys: String, CodingKey {
+    case id, name
+    case coverImageURL = "cover_image_url"
+    case videoURL = "video_url"
+  }
 }
