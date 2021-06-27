@@ -9,23 +9,28 @@
 import Foundation
 
 // MARK: - Interactor
-protocol ExerciseSceneInteractorProtocol: class {
+protocol ExerciseSceneInteractorProtocol: AnyObject {
+  var delegate: ExerciseSceneInteractorDelegate? { get set }
 
-    var delegate: ExerciseSceneInteractorDelegate? { get set }
+  func currentExercise() -> Exercise?
+  func skipExercise()
 }
 
 enum ExerciseSceneInteractorOutput {
 
 }
 
-protocol ExerciseSceneInteractorDelegate: class {
+protocol ExerciseSceneInteractorDelegate: AnyObject {
 
-    func handleOutput(_ output: ExerciseSceneInteractorOutput)
+  func handleOutput(_ output: ExerciseSceneInteractorOutput)
 }
 
 // MARK: - Presenter
-protocol ExerciseScenePresenterProtocol: class {
+protocol ExerciseScenePresenterProtocol: AnyObject {
+  var videoTitle: String { get }
 
+  func urlForPlayer() -> URL?
+  func skipExercise()
 }
 
 enum ExerciseScenePresenterOutput: Equatable {
@@ -33,9 +38,10 @@ enum ExerciseScenePresenterOutput: Equatable {
 }
 
 // MARK: - View
-protocol ExerciseSceneViewProtocol: class {
-
-    func handleOutput(_ output: ExerciseScenePresenterOutput)
+protocol ExerciseSceneViewProtocol: AnyObject {
+  func handleOutput(_ output: ExerciseScenePresenterOutput)
+  func showTitle()
+  func hideTitle()
 }
 
 // MARK: - Router
@@ -43,7 +49,7 @@ enum ExerciseSceneRoute: Equatable {
 
 }
 
-protocol ExerciseSceneRouterProtocol: class {
+protocol ExerciseSceneRouterProtocol: AnyObject {
 
-    func navigate(to route: ExerciseSceneRoute)
+  func navigate(to route: ExerciseSceneRoute)
 }

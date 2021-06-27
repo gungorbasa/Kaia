@@ -9,7 +9,20 @@
 import Foundation
 
 final class ExerciseSceneInteractor: ExerciseSceneInteractorProtocol {
+  weak var delegate: ExerciseSceneInteractorDelegate?
+  private var currentExerciseCounter = 0
+  private let exercises: [Exercise]
 
-    weak var delegate: ExerciseSceneInteractorDelegate?
+  init(exercises: [Exercise]) {
+    self.exercises = exercises
+  }
 
+  func skipExercise() {
+    currentExerciseCounter += 1
+  }
+
+  func currentExercise() -> Exercise? {
+    guard exercises.count > currentExerciseCounter else { return nil }
+    return exercises[currentExerciseCounter]
+  }
 }

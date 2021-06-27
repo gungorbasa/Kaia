@@ -9,23 +9,35 @@
 import Foundation
 
 final class ExerciseScenePresenter: ExerciseScenePresenterProtocol {
+  private weak var view: ExerciseSceneViewProtocol?
 
-    private unowned let view: ExerciseSceneViewProtocol
+  private let interactor: ExerciseSceneInteractorProtocol
+  private let router: ExerciseSceneRouterProtocol
+  private var currentExerciseIndex = 0
+  private var skippedExerciseIds: [Int] = []
 
-    private let interactor: ExerciseSceneInteractorProtocol
-    private let router: ExerciseSceneRouterProtocol
+  var videoTitle: String {
+    interactor.currentExercise()?.name ?? ""
+  }
 
-    init(_ view: ExerciseSceneViewProtocol, interactor: ExerciseSceneInteractorProtocol, router: ExerciseSceneRouterProtocol) {
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-        self.interactor.delegate = self
-    }
+  init(_ view: ExerciseSceneViewProtocol, interactor: ExerciseSceneInteractorProtocol, router: ExerciseSceneRouterProtocol) {
+    self.view = view
+    self.interactor = interactor
+    self.router = router
+    self.interactor.delegate = self
+  }
+
+  func urlForPlayer() -> URL? {
+    URL(string: interactor.currentExercise()?.videoURL ?? "")
+  }
+
+  func skipExercise() {
+    interactor.skipExercise()
+  }
 }
 
 extension ExerciseScenePresenter: ExerciseSceneInteractorDelegate {
+  func handleOutput(_ output: ExerciseSceneInteractorOutput) {
 
-    func handleOutput(_ output: ExerciseSceneInteractorOutput) {
-
-    }
+  }
 }
