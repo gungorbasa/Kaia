@@ -11,6 +11,8 @@ import UIKit
 final class MainViewController: UIViewController {
   
   var presenter: MainPresenterProtocol!
+
+  private let tableView = UITableView.autoLayout()
   
   override func viewDidLoad() {
     super.viewDidLoad()
