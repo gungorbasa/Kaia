@@ -10,5 +10,10 @@ import Foundation
 
 final class MainInteractor: MainInteractorProtocol {
   weak var delegate: MainInteractorDelegate?
-  
+
+  private let service: ExerciseServing
+
+  init(service: ExerciseServing) {
+    self.service = service
+  }
 }

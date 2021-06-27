@@ -14,7 +14,8 @@ final class MainBuilder {
     let view = MainViewController()
     // TODO: Injections
     let router = MainRouter(view)
-    let interactor = MainInteractor()
+    let service = ExerciseService()
+    let interactor = MainInteractor(service: service)
     let presenter = MainPresenter(view, interactor: interactor, router: router)
     view.presenter = presenter
     return view

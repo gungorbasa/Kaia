@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WelcomeElement: Codable {
+struct Exercise: Codable {
   let id: Int
   let name: String
   let coverImageURL: String

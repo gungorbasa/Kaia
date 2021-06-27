@@ -28,6 +28,8 @@
 		23E77963268844290052CBA1 /* ExerciseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77962268844290052CBA1 /* ExerciseCellViewModel.swift */; };
 		23E77966268846490052CBA1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 23E77965268846490052CBA1 /* Nuke */; };
 		23E77968268847230052CBA1 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77967268847230052CBA1 /* Images.swift */; };
+		23E7796B268848700052CBA1 /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7796A268848700052CBA1 /* ExerciseService.swift */; };
+		23E7796D268849290052CBA1 /* ExerciseNetworkRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7796C268849290052CBA1 /* ExerciseNetworkRoutes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		23E7795F268844060052CBA1 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		23E77962268844290052CBA1 /* ExerciseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModel.swift; sourceTree = "<group>"; };
 		23E77967268847230052CBA1 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		23E7796A268848700052CBA1 /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseService.swift; sourceTree = "<group>"; };
+		23E7796C268849290052CBA1 /* ExerciseNetworkRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNetworkRoutes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 		23E7794626883EC40052CBA1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				23E779692688485D0052CBA1 /* Service */,
 				23E7794826883EE40052CBA1 /* MainPresenter.swift */,
 				23E7794926883EE40052CBA1 /* MainRouter.swift */,
 				23E7794A26883EE40052CBA1 /* MainContracts.swift */,
@@ -210,6 +215,15 @@
 				23E77962268844290052CBA1 /* ExerciseCellViewModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		23E779692688485D0052CBA1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				23E7796A268848700052CBA1 /* ExerciseService.swift */,
+				23E7796C268849290052CBA1 /* ExerciseNetworkRoutes.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,8 @@
 				23E77968268847230052CBA1 /* Images.swift in Sources */,
 				2312914326883D5200CAB37B /* SceneDelegate.swift in Sources */,
 				23E77963268844290052CBA1 /* ExerciseCellViewModel.swift in Sources */,
+				23E7796D268849290052CBA1 /* ExerciseNetworkRoutes.swift in Sources */,
+				23E7796B268848700052CBA1 /* ExerciseService.swift in Sources */,
 				23E7795326883EE40052CBA1 /* MainBuilder.swift in Sources */,
 				23E7795126883EE40052CBA1 /* MainContracts.swift in Sources */,
 				23E7795026883EE40052CBA1 /* MainRouter.swift in Sources */,
