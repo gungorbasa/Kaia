@@ -10,7 +10,7 @@ import Foundation
 
 final class MainPresenter: MainPresenterProtocol {
   
-  private unowned let view: MainViewProtocol
+  private weak var view: MainViewProtocol?
   
   private let interactor: MainInteractorProtocol
   private let router: MainRouterProtocol
@@ -20,6 +20,10 @@ final class MainPresenter: MainPresenterProtocol {
     self.interactor = interactor
     self.router = router
     self.interactor.delegate = self
+  }
+
+  func onViewDidLoad() {
+    interactor.fetchExercises()
   }
 }
 

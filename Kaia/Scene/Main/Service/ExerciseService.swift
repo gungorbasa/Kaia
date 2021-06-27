@@ -8,7 +8,9 @@
 import Foundation
 import Networking
 
-protocol ExerciseServing {}
+protocol ExerciseServing {
+  func fetch(completion: @escaping (Result<Exercise, Error>) -> Void)
+}
 
 final class ExerciseService: ExerciseServing {
   private let networking: Networking

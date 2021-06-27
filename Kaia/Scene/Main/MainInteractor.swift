@@ -16,4 +16,10 @@ final class MainInteractor: MainInteractorProtocol {
   init(service: ExerciseServing) {
     self.service = service
   }
+
+  func fetchExercises() {
+    service.fetch { result in
+      print(result)
+    }
+  }
 }

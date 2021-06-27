@@ -11,6 +11,8 @@ import Foundation
 // MARK: - Interactor
 protocol MainInteractorProtocol: AnyObject {
   var delegate: MainInteractorDelegate? { get set }
+
+  func fetchExercises()
 }
 
 enum MainInteractorOutput {
@@ -22,6 +24,7 @@ protocol MainInteractorDelegate: AnyObject {
 
 // MARK: - Presenter
 protocol MainPresenterProtocol: AnyObject {
+  func onViewDidLoad()
 }
 
 enum MainPresenterOutput: Equatable {
