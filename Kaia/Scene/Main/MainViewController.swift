@@ -20,14 +20,14 @@ final class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    presenter.onViewDidLoad()
   }
-  
-
 }
 
 private extension MainViewController {
   func setup() {
     setupStackView()
+    setupTableView()
     setupStartButton()
   }
 
@@ -42,6 +42,11 @@ private extension MainViewController {
     stackView.snp.makeConstraints {
       $0.edges.equalTo(view.safeAreaInsets)
     }
+  }
+
+  func setupTableView() {
+    tableView.register(cell: ExerciseCell.self)
+    tableView.dataSource = self
   }
 
   func setupStartButton() {
@@ -60,9 +65,34 @@ private extension MainViewController {
   }
 }
 
+extension MainViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    presenter.numberOfSections()
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    presenter.numberOfRows()
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(ExerciseCell.self, for: indexPath)
+    guard let viewModel = presenter.viewModel(for: indexPath.row) else {
+      return cell
+    }
+    cell.configure(with: viewModel)
+    return cell
+  }
+
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    presenter.titleForHeader()
+  }
+}
+
 extension MainViewController: MainViewProtocol {
-  
   func handleOutput(_ output: MainPresenterOutput) {
-    
+    switch output {
+    case .reload:
+      tableView.reloadData()
+    }
   }
 }

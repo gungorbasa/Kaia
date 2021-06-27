@@ -32,6 +32,9 @@
 		23E7796D268849290052CBA1 /* ExerciseNetworkRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7796C268849290052CBA1 /* ExerciseNetworkRoutes.swift */; };
 		23E7797026884D280052CBA1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7796F26884D280052CBA1 /* Storage.swift */; };
 		23E77972268851750052CBA1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77971268851750052CBA1 /* Exercise.swift */; };
+		23E77975268855100052CBA1 /* ExerciseCellViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77974268855100052CBA1 /* ExerciseCellViewModelFactory.swift */; };
+		23E77977268856EA0052CBA1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77976268856EA0052CBA1 /* UITableView+Extension.swift */; };
+		23E77979268857D70052CBA1 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77978268857D70052CBA1 /* UITableViewCell+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		23E7796C268849290052CBA1 /* ExerciseNetworkRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNetworkRoutes.swift; sourceTree = "<group>"; };
 		23E7796F26884D280052CBA1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		23E77971268851750052CBA1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		23E77974268855100052CBA1 /* ExerciseCellViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModelFactory.swift; sourceTree = "<group>"; };
+		23E77976268856EA0052CBA1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		23E77978268857D70052CBA1 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 		23E7794626883EC40052CBA1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				23E77973268855000052CBA1 /* Factories */,
 				23E779692688485D0052CBA1 /* Service */,
 				23E7794826883EE40052CBA1 /* MainPresenter.swift */,
 				23E7794926883EE40052CBA1 /* MainRouter.swift */,
@@ -200,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				23E77956268840350052CBA1 /* UIView+Extension.swift */,
+				23E77976268856EA0052CBA1 /* UITableView+Extension.swift */,
+				23E77978268857D70052CBA1 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +247,14 @@
 				23E7796F26884D280052CBA1 /* Storage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		23E77973268855000052CBA1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				23E77974268855100052CBA1 /* ExerciseCellViewModelFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,10 +403,13 @@
 				23E7795426883EE40052CBA1 /* MainInteractor.swift in Sources */,
 				23E77960268844060052CBA1 /* ExerciseCell.swift in Sources */,
 				2312914126883D5200CAB37B /* AppDelegate.swift in Sources */,
+				23E77979268857D70052CBA1 /* UITableViewCell+Extension.swift in Sources */,
+				23E77977268856EA0052CBA1 /* UITableView+Extension.swift in Sources */,
 				23E77968268847230052CBA1 /* Images.swift in Sources */,
 				2312914326883D5200CAB37B /* SceneDelegate.swift in Sources */,
 				23E77963268844290052CBA1 /* ExerciseCellViewModel.swift in Sources */,
 				23E7796D268849290052CBA1 /* ExerciseNetworkRoutes.swift in Sources */,
+				23E77975268855100052CBA1 /* ExerciseCellViewModelFactory.swift in Sources */,
 				23E7796B268848700052CBA1 /* ExerciseService.swift in Sources */,
 				23E7795326883EE40052CBA1 /* MainBuilder.swift in Sources */,
 				23E7795126883EE40052CBA1 /* MainContracts.swift in Sources */,

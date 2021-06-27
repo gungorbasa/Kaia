@@ -8,6 +8,6 @@
 import UIKit
 
 enum Images {
-  static let favoriteImage = UIImage()
-  static let notFavoriteImage = UIImage()
+  static let favoriteImage = UIImage(systemName: "heart.fill")
+  static let notFavoriteImage = UIImage(systemName: "heart")
 }

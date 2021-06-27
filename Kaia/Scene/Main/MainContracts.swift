@@ -27,9 +27,14 @@ protocol MainInteractorDelegate: AnyObject {
 // MARK: - Presenter
 protocol MainPresenterProtocol: AnyObject {
   func onViewDidLoad()
+  func numberOfSections() -> Int
+  func numberOfRows() -> Int
+  func viewModel(for index: Int) -> ExerciseCellViewModel?
+  func titleForHeader() -> String
 }
 
 enum MainPresenterOutput: Equatable {
+  case reload
 }
 
 // MARK: - View
@@ -39,6 +44,7 @@ protocol MainViewProtocol: AnyObject {
 
 // MARK: - Router
 enum MainRoute: Equatable {
+  case alert(String, String)
 }
 
 protocol MainRouterProtocol: AnyObject {

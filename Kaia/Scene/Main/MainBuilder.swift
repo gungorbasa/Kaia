@@ -16,7 +16,7 @@ final class MainBuilder {
     let router = MainRouter(view)
     let service = ExerciseService()
     let interactor = MainInteractor(service: service, storage: LocalUserDefaults())
-    let presenter = MainPresenter(view, interactor: interactor, router: router)
+    let presenter = MainPresenter(view, interactor: interactor, router: router, factory: ExerciseCellViewModelFactory())
     view.presenter = presenter
     return view
   }

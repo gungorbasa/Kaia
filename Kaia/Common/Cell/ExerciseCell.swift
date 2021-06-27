@@ -13,6 +13,7 @@ protocol ExerciseCellDelegate: AnyObject {
 }
 
 final class ExerciseCell: UITableViewCell {
+  private let containerStackView = UIStackView.autolayoutView()
   private let stackView = UIStackView.autolayoutView()
   private let image = UIImageView.autolayoutView()
   private let name = UILabel.autolayoutView()
@@ -40,24 +41,38 @@ final class ExerciseCell: UITableViewCell {
 
 private extension ExerciseCell {
   func setup() {
+    setupContainerStackView()
     setupStackView()
     setupImage()
     setupFavoriteButton()
   }
 
-  func setupStackView() {
-    contentView.addSubview(stackView)
-    stackView.axis = .horizontal
-    stackView.addArrangedSubview(image)
-    stackView.addArrangedSubview(name)
+  func setupContainerStackView() {
+    contentView.addSubview(containerStackView)
 
-    stackView.snp.makeConstraints {
-      $0.leading.equalTo(16)
-      $0.top.bottom.equalTo(8)
+    containerStackView.addArrangedSubview(stackView)
+    containerStackView.addArrangedSubview(favoriteButton)
+
+    containerStackView.axis = .horizontal
+    containerStackView.alignment = .center
+    containerStackView.distribution = .fill
+    containerStackView.snp.makeConstraints {
+      $0.edges.equalTo(contentView.safeAreaInsets)
     }
   }
 
+  func setupStackView() {
+    stackView.axis = .horizontal
+    stackView.alignment = .center
+    stackView.addArrangedSubview(image)
+    stackView.addArrangedSubview(name)
+    stackView.spacing = 8
+    stackView.snp.makeConstraints { $0.height.equalTo(80) }
+  }
+
   func setupImage() {
+    image.contentMode = .scaleAspectFill
+    image.layer.masksToBounds = true
     image.snp.makeConstraints {
       $0.height.equalTo(80)
       $0.width.equalTo(120)
@@ -65,13 +80,9 @@ private extension ExerciseCell {
   }
 
   func setupFavoriteButton() {
-    contentView.addSubview(favoriteButton)
     favoriteButton.addTarget(self, action: #selector(didTapFavoriteButton), for: .touchUpInside)
     favoriteButton.snp.makeConstraints {
       $0.size.equalTo(44)
-      $0.leading.equalTo(stackView.snp.trailing).offset(8)
-      $0.trailing.equalToSuperview().offset(16)
-      $0.centerY.equalToSuperview()
     }
   }
 
