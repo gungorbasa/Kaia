@@ -7,12 +7,15 @@
 //
 
 import AVKit
+import Combine
 import UIKit
 
 final class ExerciseSceneViewController: UIViewController {
   private let playerViewController = AVPlayerViewController()
   private let skipButton = UIButton.autolayoutView()
   private let titleLabel = UILabel.autolayoutView()
+
+  private var cancelBag: Set<AnyCancellable> = []
 
   private let titleAnimationDuration = 0.3
 
@@ -21,6 +24,7 @@ final class ExerciseSceneViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    presenter.onViewDidLoad()
   }
 
   private func setup() {
@@ -35,10 +39,8 @@ final class ExerciseSceneViewController: UIViewController {
   }
 
   func showTitle() {
-    func hideTitle() {
-      UIView.animate(withDuration: titleAnimationDuration) {
-        self.titleLabel.alpha = 1.0
-      }
+    UIView.animate(withDuration: titleAnimationDuration) {
+      self.titleLabel.alpha = 1.0
     }
   }
 
@@ -51,13 +53,6 @@ final class ExerciseSceneViewController: UIViewController {
 
 extension ExerciseSceneViewController {
   func setupAVPlayerViewController() {
-    guard let url = presenter.urlForPlayer() else { return }
-    let player = AVPlayer(url: url)
-    let playerFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-
-    playerViewController.player = player
-    playerViewController.view.frame = playerFrame
-
     addChild(playerViewController)
     view.addSubview(playerViewController.view)
     playerViewController.view.snp.makeConstraints {
@@ -65,6 +60,12 @@ extension ExerciseSceneViewController {
     }
     playerViewController.didMove(toParent: self)
     view.sendSubviewToBack(playerViewController.view)
+
+    NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)
+      .sink { [weak self] _ in
+        self?.presenter.skipExercise()
+      }
+      .store(in: &cancelBag)
   }
 
   func setupSkipButton() {
@@ -82,7 +83,6 @@ extension ExerciseSceneViewController {
 
   func setupTitleLabel() {
     view.addSubview(titleLabel)
-    titleLabel.text = presenter.videoTitle
     titleLabel.backgroundColor = .black.withAlphaComponent(0.4)
     titleLabel.textColor = .white
     titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
@@ -100,6 +100,15 @@ extension ExerciseSceneViewController {
 
 extension ExerciseSceneViewController: ExerciseSceneViewProtocol {
   func handleOutput(_ output: ExerciseScenePresenterOutput) {
-
+    switch output {
+    case .url(let url):
+      let player = AVPlayer(url: url)
+      let playerFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+      playerViewController.view.frame = playerFrame
+      playerViewController.player = player
+      playerViewController.player?.play()
+    case .videoTitle(let title):
+      titleLabel.text = title
+    }
   }
 }

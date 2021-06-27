@@ -41,6 +41,7 @@
 		23E77986268861420052CBA1 /* ExerciseSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7797F268861420052CBA1 /* ExerciseSceneViewController.swift */; };
 		23E77987268861420052CBA1 /* ExerciseSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77980268861420052CBA1 /* ExerciseSceneBuilder.swift */; };
 		23E77988268861420052CBA1 /* ExerciseSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77981268861420052CBA1 /* ExerciseSceneInteractor.swift */; };
+		23E7798A26886C200052CBA1 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7798926886C200052CBA1 /* Debouncer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		23E7797F268861420052CBA1 /* ExerciseSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneViewController.swift; sourceTree = "<group>"; };
 		23E77980268861420052CBA1 /* ExerciseSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneBuilder.swift; sourceTree = "<group>"; };
 		23E77981268861420052CBA1 /* ExerciseSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneInteractor.swift; sourceTree = "<group>"; };
+		23E7798926886C200052CBA1 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				23E7796E26884D150052CBA1 /* Storage */,
 				23E77961268844110052CBA1 /* Cell */,
 				23E77967268847230052CBA1 /* Images.swift */,
+				23E7798926886C200052CBA1 /* Debouncer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				2312914126883D5200CAB37B /* AppDelegate.swift in Sources */,
 				23E77979268857D70052CBA1 /* UITableViewCell+Extension.swift in Sources */,
 				23E77987268861420052CBA1 /* ExerciseSceneBuilder.swift in Sources */,
+				23E7798A26886C200052CBA1 /* Debouncer.swift in Sources */,
 				23E77986268861420052CBA1 /* ExerciseSceneViewController.swift in Sources */,
 				23E77988268861420052CBA1 /* ExerciseSceneInteractor.swift in Sources */,
 				23E77977268856EA0052CBA1 /* UITableView+Extension.swift in Sources */,

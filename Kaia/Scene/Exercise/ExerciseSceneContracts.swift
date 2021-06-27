@@ -27,14 +27,13 @@ protocol ExerciseSceneInteractorDelegate: AnyObject {
 
 // MARK: - Presenter
 protocol ExerciseScenePresenterProtocol: AnyObject {
-  var videoTitle: String { get }
-
-  func urlForPlayer() -> URL?
+  func onViewDidLoad()
   func skipExercise()
 }
 
 enum ExerciseScenePresenterOutput: Equatable {
-
+  case url(URL)
+  case videoTitle(String)
 }
 
 // MARK: - View

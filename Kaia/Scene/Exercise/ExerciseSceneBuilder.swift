@@ -15,7 +15,12 @@ final class ExerciseSceneBuilder {
     // TODO: Injections
     let router = ExerciseSceneRouter(view)
     let interactor = ExerciseSceneInteractor(exercises: exercises)
-    let presenter = ExerciseScenePresenter(view, interactor: interactor, router: router)
+    let presenter = ExerciseScenePresenter(
+      view,
+      interactor: interactor,
+      router: router,
+      debouncer: Debouncer(timeInterval: 5)
+    )
     view.presenter = presenter
     return view
   }
