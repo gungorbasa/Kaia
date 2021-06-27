@@ -13,6 +13,6 @@ protocol ExerciseCellViewModelFactoring {
 
 struct ExerciseCellViewModelFactory: ExerciseCellViewModelFactoring {
   func make(with models: [Exercise]) -> [ExerciseCellViewModel] {
-    models.map { .init(imageUrl: URL(string: $0.coverImageURL), title: $0.name, isFavorite: $0.isFavorite) }
+    models.map { .init(id: $0.id, imageUrl: URL(string: $0.coverImageURL), title: $0.name, isFavorite: $0.isFavorite) }
   }
 }

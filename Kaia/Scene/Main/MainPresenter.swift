@@ -38,6 +38,19 @@ final class MainPresenter: MainPresenterProtocol {
   func titleForHeader() -> String {
     "Exercises"
   }
+
+  func didTapLike(on index: Int) {
+    guard index < exercises.count else { return }
+    let exercise = exercises[index]
+    interactor.exerciseLikeAction(exercise.id, isLiked: exercise.isFavorite)
+    exercises[index] = ExerciseCellViewModel(
+      id: exercise.id,
+      imageUrl: exercise.imageUrl,
+      title: exercise.title,
+      isFavorite: exercise.isFavorite ? false : true
+    )
+    view?.handleOutput(.reload)
+  }
 }
 
 extension MainPresenter: MainInteractorDelegate {

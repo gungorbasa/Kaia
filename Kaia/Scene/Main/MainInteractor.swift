@@ -40,4 +40,14 @@ final class MainInteractor: MainInteractorProtocol {
       }
     }
   }
+
+  func exerciseLikeAction(_ id: Int, isLiked: Bool) {
+    var favorites: [Int] = storage.value(key: Storage.favorites) ?? []
+    if isLiked {
+      favorites.removeAll(where: { $0 == id })
+    } else {
+      favorites.append(id)
+    }
+    storage.write(key: Storage.favorites, value: favorites)
+  }
 }

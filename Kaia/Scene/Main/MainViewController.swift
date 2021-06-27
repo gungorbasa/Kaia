@@ -79,12 +79,20 @@ extension MainViewController: UITableViewDataSource {
     guard let viewModel = presenter.viewModel(for: indexPath.row) else {
       return cell
     }
+    cell.delegate = self
     cell.configure(with: viewModel)
     return cell
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     presenter.titleForHeader()
+  }
+}
+
+extension MainViewController: ExerciseCellDelegate {
+  func didTapFavoriteButton(on cell: ExerciseCell) {
+    guard let indexPath = tableView.indexPath(for: cell) else { return }
+    presenter.didTapLike(on: indexPath.row)
   }
 }
 

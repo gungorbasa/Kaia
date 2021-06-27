@@ -9,7 +9,7 @@ import Nuke
 import UIKit
 
 protocol ExerciseCellDelegate: AnyObject {
-  func didTapFavoriteButton()
+  func didTapFavoriteButton(on cell: ExerciseCell)
 }
 
 final class ExerciseCell: UITableViewCell {
@@ -88,6 +88,6 @@ private extension ExerciseCell {
 
   @objc
   func didTapFavoriteButton() {
-    delegate?.didTapFavoriteButton()
+    delegate?.didTapFavoriteButton(on: self)
   }
 }

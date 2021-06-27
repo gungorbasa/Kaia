@@ -13,6 +13,7 @@ protocol MainInteractorProtocol: AnyObject {
   var delegate: MainInteractorDelegate? { get set }
 
   func fetchExercises()
+  func exerciseLikeAction(_ id: Int, isLiked: Bool)
 }
 
 enum MainInteractorOutput {
@@ -31,6 +32,7 @@ protocol MainPresenterProtocol: AnyObject {
   func numberOfRows() -> Int
   func viewModel(for index: Int) -> ExerciseCellViewModel?
   func titleForHeader() -> String
+  func didTapLike(on index: Int)
 }
 
 enum MainPresenterOutput: Equatable {
