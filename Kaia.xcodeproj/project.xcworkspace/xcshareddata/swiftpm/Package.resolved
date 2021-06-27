@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Networking",
+        "repositoryURL": "https://github.com/gungorbasa/Networking",
+        "state": {
+          "branch": null,
+          "revision": "2fe2b82234bfc37f1cc35241a0ca7e615ea7b3be",
+          "version": "0.2.2"
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
