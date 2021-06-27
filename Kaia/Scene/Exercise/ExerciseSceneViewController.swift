@@ -14,6 +14,7 @@ final class ExerciseSceneViewController: UIViewController {
   private let playerViewController = AVPlayerViewController()
   private let skipButton = UIButton.autolayoutView()
   private let titleLabel = UILabel.autolayoutView()
+  private let closeButton = UIButton.autolayoutView()
 
   private var cancelBag: Set<AnyCancellable> = []
 
@@ -25,12 +26,6 @@ final class ExerciseSceneViewController: UIViewController {
     super.viewDidLoad()
     setup()
     presenter.onViewDidLoad()
-  }
-
-  private func setup() {
-    setupAVPlayerViewController()
-    setupSkipButton()
-    setupTitleLabel()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +47,13 @@ final class ExerciseSceneViewController: UIViewController {
 }
 
 extension ExerciseSceneViewController {
+  private func setup() {
+    setupCloseButton()
+    setupAVPlayerViewController()
+    setupSkipButton()
+    setupTitleLabel()
+  }
+
   func setupAVPlayerViewController() {
     addChild(playerViewController)
     view.addSubview(playerViewController.view)
@@ -66,6 +68,16 @@ extension ExerciseSceneViewController {
         self?.presenter.skipExercise()
       }
       .store(in: &cancelBag)
+  }
+
+  func setupCloseButton() {
+    view.addSubview(closeButton)
+    closeButton.setImage(Images.closeButton, for: .normal)
+    closeButton.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
+    closeButton.snp.makeConstraints {
+      $0.top.trailing.equalTo(view.safeAreaLayoutGuide).inset(36)
+      $0.size.equalTo(44)
+    }
   }
 
   func setupSkipButton() {
@@ -95,6 +107,11 @@ extension ExerciseSceneViewController {
   @objc
   func didTapSkip() {
     presenter.skipExercise()
+  }
+
+  @objc
+  func didTapClose() {
+    presenter.onTouchCloseButton()
   }
 }
 

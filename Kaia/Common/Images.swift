@@ -10,4 +10,5 @@ import UIKit
 enum Images {
   static let favoriteImage = UIImage(systemName: "heart.fill")
   static let notFavoriteImage = UIImage(systemName: "heart")
+  static let closeButton = UIImage(systemName: "xmark.circle")
 }

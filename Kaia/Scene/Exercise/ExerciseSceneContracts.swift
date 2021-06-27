@@ -29,6 +29,7 @@ protocol ExerciseSceneInteractorDelegate: AnyObject {
 protocol ExerciseScenePresenterProtocol: AnyObject {
   func onViewDidLoad()
   func skipExercise()
+  func onTouchCloseButton()
 }
 
 enum ExerciseScenePresenterOutput: Equatable {
@@ -45,7 +46,7 @@ protocol ExerciseSceneViewProtocol: AnyObject {
 
 // MARK: - Router
 enum ExerciseSceneRoute: Equatable {
-
+  case dismiss
 }
 
 protocol ExerciseSceneRouterProtocol: AnyObject {

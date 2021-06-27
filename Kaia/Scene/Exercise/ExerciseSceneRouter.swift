@@ -17,6 +17,9 @@ final class ExerciseSceneRouter: ExerciseSceneRouterProtocol {
     }
 
     func navigate(to route: ExerciseSceneRoute) {
-
+      switch route {
+      case .dismiss:
+        view.navigationController?.popViewController(animated: true)
+      }
     }
 }

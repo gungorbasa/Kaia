@@ -46,6 +46,10 @@ final class ExerciseScenePresenter: ExerciseScenePresenterProtocol {
     debouncer.renewInterval()
   }
 
+  func onTouchCloseButton() {
+    router.navigate(to: .dismiss)
+  }
+
   private func setup() {
     debouncer.handler = { [weak self] in
       self?.view?.hideTitle()
