@@ -5,7 +5,7 @@
 //  Created by Gungor Basa on 6/27/21.
 //
 
-import UIit
+import UIKit
 
 extension UIView {
   /// Initializes autolayout `view` instance
