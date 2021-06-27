@@ -92,7 +92,7 @@ extension SummaryViewController: UITableViewDataSource {
 extension SummaryViewController: ExerciseCellDelegate {
   func didTapFavoriteButton(on cell: ExerciseCell) {
     guard let indexPath = tableView.indexPath(for: cell) else { return }
-//    presenter.didTapLike(on: indexPath.row)
+    presenter.onTapLike(on: indexPath)
   }
 }
 

@@ -14,10 +14,12 @@ protocol SummaryInteractorProtocol: AnyObject {
   var delegate: SummaryInteractorDelegate? { get set }
   var skippedExercises: [Exercise] { get }
   var nonSkippedExercises: [Exercise] { get }
+
+  func exerciseLikeAction(_ id: Int, isLiked: Bool)
 }
 
 enum SummaryInteractorOutput {
-
+  case update
 }
 
 protocol SummaryInteractorDelegate: AnyObject {
@@ -33,6 +35,7 @@ protocol SummaryPresenterProtocol: AnyObject {
   func viewModel(for indexPath: IndexPath) -> ExerciseCellViewModel?
   func titleForHeader(in section: Int) -> String
   func onTapFinishExercise()
+  func onTapLike(on indexPath: IndexPath)
 }
 
 enum SummaryPresenterOutput: Equatable {

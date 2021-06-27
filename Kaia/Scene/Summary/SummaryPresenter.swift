@@ -62,14 +62,29 @@ final class SummaryPresenter: SummaryPresenterProtocol {
     }
   }
 
+  func onTapLike(on indexPath: IndexPath) {
+    let exercise: Exercise
+    if indexPath.section == 0, interactor.skippedExercises.count > indexPath.count {
+      exercise = interactor.skippedExercises[indexPath.row]
+      interactor.exerciseLikeAction(exercise.id, isLiked: exercise.isFavorite)
+    } else if indexPath.section == 1, interactor.nonSkippedExercises.count > indexPath.count {
+      exercise = interactor.nonSkippedExercises[indexPath.row]
+      interactor.exerciseLikeAction(exercise.id, isLiked: exercise.isFavorite)
+    }
+  }
+
   func onTapFinishExercise() {
     router.navigate(to: .dismiss)
   }
 }
 
 extension SummaryPresenter: SummaryInteractorDelegate {
-
   func handleOutput(_ output: SummaryInteractorOutput) {
-
+    switch output {
+    case .update:
+      DispatchQueue.main.async {
+        self.view?.handleOutput(.reload)
+      }
+    }
   }
 }

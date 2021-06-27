@@ -25,7 +25,7 @@ final class MainPresenter: MainPresenterProtocol {
     self.interactor.delegate = self
   }
 
-  func onViewDidLoad() {
+  func onViewWillAppear() {
     interactor.fetchExercises()
   }
 

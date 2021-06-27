@@ -28,7 +28,7 @@ protocol MainInteractorDelegate: AnyObject {
 
 // MARK: - Presenter
 protocol MainPresenterProtocol: AnyObject {
-  func onViewDidLoad()
+  func onViewWillAppear()
   func numberOfSections() -> Int
   func numberOfRows() -> Int
   func viewModel(for index: Int) -> ExerciseCellViewModel?

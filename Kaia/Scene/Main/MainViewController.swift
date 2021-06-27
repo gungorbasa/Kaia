@@ -20,7 +20,11 @@ final class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-    presenter.onViewDidLoad()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    presenter.onViewWillAppear()
   }
 }
 
