@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exercise: Codable {
+struct Exercise: Codable, Equatable {
   let id: Int
   let name: String
   let coverImageURL: String

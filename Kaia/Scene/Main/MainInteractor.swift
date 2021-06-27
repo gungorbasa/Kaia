@@ -14,6 +14,9 @@ final class MainInteractor: MainInteractorProtocol {
   private let service: ExerciseServing
   private let storage: LocalStorageProtocol
 
+  var exercises: [Exercise] = []
+  
+
   init(service: ExerciseServing, storage: LocalStorageProtocol) {
     self.service = service
     self.storage = storage
@@ -34,6 +37,7 @@ final class MainInteractor: MainInteractorProtocol {
             isFavorite: favorites.contains($0.id) ? true : false
           )
         }
+        self?.exercises = result
         self?.delegate?.handleOutput(.list(result))
       case .failure(let error):
         self?.delegate?.handleOutput(.error(error))

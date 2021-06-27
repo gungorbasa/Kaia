@@ -51,6 +51,10 @@ final class MainPresenter: MainPresenterProtocol {
     )
     view?.handleOutput(.reload)
   }
+
+  func didTapStartButton() {
+    router.navigate(to: .exercise(interactor.exercises))
+  }
 }
 
 extension MainPresenter: MainInteractorDelegate {

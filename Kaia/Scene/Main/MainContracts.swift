@@ -11,6 +11,7 @@ import Foundation
 // MARK: - Interactor
 protocol MainInteractorProtocol: AnyObject {
   var delegate: MainInteractorDelegate? { get set }
+  var exercises: [Exercise] { get }
 
   func fetchExercises()
   func exerciseLikeAction(_ id: Int, isLiked: Bool)
@@ -33,6 +34,7 @@ protocol MainPresenterProtocol: AnyObject {
   func viewModel(for index: Int) -> ExerciseCellViewModel?
   func titleForHeader() -> String
   func didTapLike(on index: Int)
+  func didTapStartButton()
 }
 
 enum MainPresenterOutput: Equatable {
@@ -47,6 +49,7 @@ protocol MainViewProtocol: AnyObject {
 // MARK: - Router
 enum MainRoute: Equatable {
   case alert(String, String)
+  case exercise([Exercise])
 }
 
 protocol MainRouterProtocol: AnyObject {

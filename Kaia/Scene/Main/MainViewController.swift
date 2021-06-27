@@ -61,7 +61,7 @@ private extension MainViewController {
 
   @objc
   func didButtonClick() {
-    print("Button Clicked")
+    presenter.didTapStartButton()
   }
 }
 

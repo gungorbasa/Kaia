@@ -35,6 +35,12 @@
 		23E77975268855100052CBA1 /* ExerciseCellViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77974268855100052CBA1 /* ExerciseCellViewModelFactory.swift */; };
 		23E77977268856EA0052CBA1 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77976268856EA0052CBA1 /* UITableView+Extension.swift */; };
 		23E77979268857D70052CBA1 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77978268857D70052CBA1 /* UITableViewCell+Extension.swift */; };
+		23E77983268861420052CBA1 /* ExerciseScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7797C268861420052CBA1 /* ExerciseScenePresenter.swift */; };
+		23E77984268861420052CBA1 /* ExerciseSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7797D268861420052CBA1 /* ExerciseSceneRouter.swift */; };
+		23E77985268861420052CBA1 /* ExerciseSceneContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7797E268861420052CBA1 /* ExerciseSceneContracts.swift */; };
+		23E77986268861420052CBA1 /* ExerciseSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7797F268861420052CBA1 /* ExerciseSceneViewController.swift */; };
+		23E77987268861420052CBA1 /* ExerciseSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77980268861420052CBA1 /* ExerciseSceneBuilder.swift */; };
+		23E77988268861420052CBA1 /* ExerciseSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E77981268861420052CBA1 /* ExerciseSceneInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +92,12 @@
 		23E77974268855100052CBA1 /* ExerciseCellViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModelFactory.swift; sourceTree = "<group>"; };
 		23E77976268856EA0052CBA1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		23E77978268857D70052CBA1 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		23E7797C268861420052CBA1 /* ExerciseScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScenePresenter.swift; sourceTree = "<group>"; };
+		23E7797D268861420052CBA1 /* ExerciseSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneRouter.swift; sourceTree = "<group>"; };
+		23E7797E268861420052CBA1 /* ExerciseSceneContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneContracts.swift; sourceTree = "<group>"; };
+		23E7797F268861420052CBA1 /* ExerciseSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneViewController.swift; sourceTree = "<group>"; };
+		23E77980268861420052CBA1 /* ExerciseSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneBuilder.swift; sourceTree = "<group>"; };
+		23E77981268861420052CBA1 /* ExerciseSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSceneInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +195,7 @@
 		2312917326883E6F00CAB37B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				23E7797A268860FA0052CBA1 /* Exercise */,
 				23E7794626883EC40052CBA1 /* Main */,
 			);
 			path = Scene;
@@ -255,6 +268,19 @@
 				23E77974268855100052CBA1 /* ExerciseCellViewModelFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		23E7797A268860FA0052CBA1 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				23E7797C268861420052CBA1 /* ExerciseScenePresenter.swift */,
+				23E7797D268861420052CBA1 /* ExerciseSceneRouter.swift */,
+				23E7797E268861420052CBA1 /* ExerciseSceneContracts.swift */,
+				23E7797F268861420052CBA1 /* ExerciseSceneViewController.swift */,
+				23E77980268861420052CBA1 /* ExerciseSceneBuilder.swift */,
+				23E77981268861420052CBA1 /* ExerciseSceneInteractor.swift */,
+			);
+			path = Exercise;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,15 +430,21 @@
 				23E77960268844060052CBA1 /* ExerciseCell.swift in Sources */,
 				2312914126883D5200CAB37B /* AppDelegate.swift in Sources */,
 				23E77979268857D70052CBA1 /* UITableViewCell+Extension.swift in Sources */,
+				23E77987268861420052CBA1 /* ExerciseSceneBuilder.swift in Sources */,
+				23E77986268861420052CBA1 /* ExerciseSceneViewController.swift in Sources */,
+				23E77988268861420052CBA1 /* ExerciseSceneInteractor.swift in Sources */,
 				23E77977268856EA0052CBA1 /* UITableView+Extension.swift in Sources */,
 				23E77968268847230052CBA1 /* Images.swift in Sources */,
 				2312914326883D5200CAB37B /* SceneDelegate.swift in Sources */,
 				23E77963268844290052CBA1 /* ExerciseCellViewModel.swift in Sources */,
 				23E7796D268849290052CBA1 /* ExerciseNetworkRoutes.swift in Sources */,
 				23E77975268855100052CBA1 /* ExerciseCellViewModelFactory.swift in Sources */,
+				23E77985268861420052CBA1 /* ExerciseSceneContracts.swift in Sources */,
 				23E7796B268848700052CBA1 /* ExerciseService.swift in Sources */,
 				23E7795326883EE40052CBA1 /* MainBuilder.swift in Sources */,
 				23E7795126883EE40052CBA1 /* MainContracts.swift in Sources */,
+				23E77984268861420052CBA1 /* ExerciseSceneRouter.swift in Sources */,
+				23E77983268861420052CBA1 /* ExerciseScenePresenter.swift in Sources */,
 				23E7795026883EE40052CBA1 /* MainRouter.swift in Sources */,
 				23E7797026884D280052CBA1 /* Storage.swift in Sources */,
 				23E7795226883EE40052CBA1 /* MainViewController.swift in Sources */,
